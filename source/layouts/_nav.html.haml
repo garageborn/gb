@@ -1,0 +1,9 @@
+%nav{ role: 'navigation' }
+  .nav-wrapper.container
+    = link_to 'GarageBorn', '/', class: 'logo'
+    %ul
+      %li= link_to 'Jobs', '/jobs'
+    %ul#nav-mobile.side-nav{:style => "transform: translateX(-100%);"}
+      %li= link_to 'Jobs', '/jobs'
+    %a.button-collapse{ 'data-activates' => 'nav-mobile', href: '#' }
+      %i.material-icons menu

@@ -1,0 +1,31 @@
+---
+- slug: 'remote-react-developer'
+  title: 'Remote React Developer'
+  description: 'Você vai trabalhar diretamente com React, React Native, Redux e Server-side Rendering (Node.js)'
+  icon: 'react.png'
+  body: >
+    <p>
+      A Garage Born é uma empresa recém criada por Andreas Diegues (Founder do Click Jogos) e
+      Alexandre Bini (CTO do Click Jogos e Skore). Somos self-funded e queremos fazer produtos que
+      nós mesmos temos vontade de usar.
+    </p>
+    <p>
+      Estamos em busca de nossos primeiros developers, então se você gosta de codar, mas sobretudo
+      gosta de construir um produto do zero, talvez devêssemos trabalhar juntos  =]
+    <p>
+      Você vai trabalhar diretamente com React, React Native, Redux e Server-side Rendering
+      (Node.js) mas também vai acabar codando um pouco de Ruby, CSS, etc.
+    </p>
+    <p>
+      O modelo de contratação é o PJ, o trabalho é 100% remoto então você pode trabalhar de
+      qualquer lugar do seu planeta de origem, seja ele qual for, desde que tenha uma internet
+      decente, use linux ou mac e não tenha um email do hotmail  =]
+    </p>
+
+---
+- slug: 'remote-front-end-developer'
+  title: 'Remote Front-end Developer'
+  description: 'TODO'
+  icon: 'css.png'
+  body: >
+    A Garage Born é uma empresa recém criada por Andreas Diegues (Founder do Click Jogos) e Alexandre Bini (CTO do Click Jogos e Skore). Somos self-funded e queremos fazer produtos que nós mesmos temos vontade de usar.

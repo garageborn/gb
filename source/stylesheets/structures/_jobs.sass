@@ -13,12 +13,25 @@
 // *************************************
 
 // .structure
-.home
-  position: fixed
-  top: 50%
-  left: 50%
-  margin-top: -230px
-  margin-left: -200px
+.jobs
+  @extend .collection
+
+  li
+    @extend .collection-item
+    @extend .avatar
+
+  .image
+    @extend .circle
+    @extend .responsive-img
+
+  p
+    margin-right: em(50px) !important
+
+  .action
+    @extend .secondary-content
+
+    i
+      @extend .medium
 
 // -------------------------------------
 //   Modifiers

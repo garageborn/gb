@@ -13,13 +13,21 @@
 // *************************************
 
 // .structure
-.home
-  position: fixed
-  top: 50%
-  left: 50%
-  margin-top: -230px
-  margin-left: -200px
+nav
+  @extend .light-blue
+  @extend .lighten-1
 
+  .logo
+    @extend .brand-logo
+
+  ul
+    @extend .right
+    @extend .hide-on-med-and-down
+
+  ul#nav-mobile
+    @extend .side-nav
+    transform: translateX(-100%)
+    background: black
 // -------------------------------------
 //   Modifiers
 // -------------------------------------

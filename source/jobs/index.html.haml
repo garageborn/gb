@@ -2,8 +2,13 @@
 title: Garage Born Jobs
 ---
 
-%h1 Jobs
+%h1.header Jobs
 
-%ul
-  %li= link_to 'Remote React Developer', '/jobs/remote-react-developer.html'
-  %li= link_to 'Remote Front-end Developer', '/jobs/remote-front-end-developer.html'
+%ul.jobs
+- data.jobs.each do |job|
+  %li
+    = image_tag "/images/#{ job.icon }", class: 'image'
+    = link_to job.title, job_path(job)
+    %p= job.description
+    = link_to  job_path(job), class: 'action' do
+      %i.material-icons play_circle_filled
