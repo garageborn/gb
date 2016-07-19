@@ -1,3 +1,5 @@
+require 'apply_app'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -34,5 +36,10 @@ configure :build do
   activate :asset_hash
 end
 
+activate :sprockets
+activate :directory_indexes
 set :haml, { ugly: true, format: :html5 }
 
+map '/apply' do
+  run ApplyApp
+end
