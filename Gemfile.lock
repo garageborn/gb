@@ -139,9 +139,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    turbolinks (5.0.0)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -164,7 +161,6 @@ DEPENDENCIES
   rack-contrib (= 1.4.0)
   rake (= 11.2.2)
   sinatra (= 1.4.7)
-  turbolinks (= 5.0.0)
 
 RUBY VERSION
    ruby 2.3.1p112

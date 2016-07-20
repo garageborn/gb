@@ -14,4 +14,3 @@ gem 'puma', '3.5.0'
 gem 'rack-contrib', '1.4.0'
 gem 'rake', '11.2.2'
 gem 'sinatra', '1.4.7'
-gem 'turbolinks', '5.0.0', require: false
