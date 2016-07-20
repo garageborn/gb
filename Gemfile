@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 gem 'haml', '4.0.7'
 gem 'httparty', '0.13.7'
