@@ -5,7 +5,7 @@ threads threads_count, threads_count
 preload_app!
 
 if ENV['RACK_ENV'] == 'production'
-  rackup File.expand_path('../config.production.ru', __FILE__)
+  rackup 'config.production.ru'
 else
   rackup DefaultRackup
 end
