@@ -6,4 +6,4 @@ title: #{ title }
 
 = body
 
-= partial 'jobs/apply'
+= partial 'jobs/apply', locals: { job: slug, trello_list: trello_list }

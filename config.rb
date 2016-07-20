@@ -8,17 +8,16 @@ require 'apply_app'
 # page "/path/to/file.html", layout: :otherlayout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+ignore '/jobs/show.html'
 data.jobs.each do |job|
   proxy "/jobs/#{ job.slug }", '/jobs/show.html', layout: 'layout', locals: {
     slug: job.slug,
+    trello_list: job.trello_list,
     title: job.title,
     description: job.description,
     body: job.body
   }
 end
-
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
 

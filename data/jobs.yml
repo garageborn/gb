@@ -3,6 +3,7 @@
   title: 'Remote React Developer'
   description: 'Você vai trabalhar diretamente com React, React Native, Redux e Server-side Rendering (Node.js)'
   icon: 'react.png'
+  trello_list: '578d8570f7eece188b3ef546'
   body: >
     <p>
       A Garage Born é uma empresa recém criada por Andreas Diegues (Founder do Click Jogos) e

@@ -1,27 +1,32 @@
 .row
-  %form.col.s12{ action: '/apply', method: :post }
+  %form.col.s12{ action: '/apply', method: :post, enctype: 'multipart/form-data' }
+    %input{ name: 'job', type: 'hidden', value: job }
+    %input{ name: 'trello_list', type: 'hidden', value: trello_list }
+
     .row
       .input-field.col.s12
-        %input#name.validate{ type: 'text', required: true }
+        %input#name.validate{ name: 'name', type: 'text', required: false }
         %label{ for: 'name' } Nome
 
     .row
       .input-field.col.s12
-        %input#email.validate{ type: 'email', required: true }
+        %input#email.validate{ name: 'email', type: 'email', required: false }
         %label{ for: 'email' } Email
 
     .row
       .input-field.col.s12
-        %input#salary.validate{ type: 'number', required: true }
+        %input#salary.validate{ name: 'salary', type: 'number', required: false }
         %label{ for: 'salary' } Pretensão Salarial
 
     .row
       .file-field.input-field
         .btn
           %span Curriculum
-          %input{ type: 'file' }
+          %input{ name: 'file', type: 'file' }
         .file-path-wrapper
-          %input.file-path.validate{ type: 'text', required: true }
+          %input.file-path.validate{ type: 'text' }
 
     .row
-      %input.right.btn.waves-effect.waves-light{ type: 'submit', name: 'action' }
+      %button.btn.right{ type: 'submit', name: 'action' } Submit
+
+    -# %button.right.btn{ type: 'submit', name: 'action' } Submit
