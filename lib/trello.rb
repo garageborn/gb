@@ -1,4 +1,5 @@
 require 'httparty'
+require 'memoist'
 
 class Trello
   include HTTParty
@@ -21,7 +22,7 @@ class Trello
 
   def save
     return false unless card
-    upload_file if file.present?
+    upload_file if file
     true
   end
 

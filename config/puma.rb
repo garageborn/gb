@@ -4,6 +4,11 @@ threads threads_count, threads_count
 
 preload_app!
 
-rackup      DefaultRackup
-port        ENV['PORT']     || 3000
+if ENV['RACK_ENV'] == 'production'
+  rackup File.expand_path('../config.production.ru', __FILE__)
+else
+  rackup DefaultRackup
+end
+
+port ENV['PORT'] || 3000
 environment ENV['RACK_ENV'] || 'development'
