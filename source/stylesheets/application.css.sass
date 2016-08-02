@@ -3,39 +3,51 @@
 body
   font-family: 'Roboto Slab', serif
   font-weight: 400
+  background: #EDF3FA
 
 body, h2, h3, p
   margin: 0
   padding: 0
 
-img#logo
-  width: 278px
-  height: 46px
-  display: block
-  margin: 30px auto
+#container
+  min-width: 300px
 
-@mixin fluid-ratio($large-size, $small-size)
-  $width-large: nth($large-size, 1)
-  $width-small: nth($small-size, 1)
-  $height-large: nth($large-size, 2)
-  $height-small: nth($small-size, 2)
-  $slope: ($height-large - $height-small) / ($width-large - $width-small)
-  $height: $height-small - $width-small * $slope
+#header
+  background: #fff
+  padding: 30px 0
 
-  padding-top: $slope * 100%
-  height: $height
-
-  background-size: cover
-  -moz-background-size: cover  /* Firefox 3.6 */
-  background-position: center  /* Internet Explorer 7/8 */
+  img
+    width: 278px
+    height: 46px
+    display: block
+    margin: 0 auto
 
 #garage
-  @include fluid-ratio(1110px 370px, 250px 150px)
   background-image: url(/images/garage.png)
-  background-color: #fff
+  background-size: cover
+  background-position: center
+  max-width: 1500px
+  margin: 0 auto
+  height: 170px
+
+@media (min-width: 375px)
+  #garage
+    height: 200px
+
+@media (min-width: 768px)
+  #garage
+    height: 400px
+
+  #garage-container
+    height: 400px
+    background-image: url(/images/garagebg.png)
+    background-size: 5px 400px
+    background-position: bottom
+    background-repeat: repeat-x
 
 main
-  background: #EDF3FA
+  max-width: 1500px
+  margin: 0 auto
   padding: 30px 15px 30px 15px
   text-align: center
   color: #666
