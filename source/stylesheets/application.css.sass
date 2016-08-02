@@ -1,47 +1,89 @@
-// *************************************
-//
-//   [Project Name] - MVCSS v4.1.1
-//   -> Manifest
-//
-// *************************************
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700'
 
-// -------------------------------------
-//   Foundation
-// -------------------------------------
+body
+  font-family: 'Roboto Slab', serif
+  font-weight: 400
 
-@import 'foundation/materialize'
-@import 'foundation/helpers'
-@import 'foundation/config'
+body, h2, h3, p
+  margin: 0
+  padding: 0
 
-// -------------------------------------
-//   Components
-// -------------------------------------
+img#logo
+  width: 278px
+  height: 46px
+  display: block
+  margin: 30px auto
 
-// @import 'components/example'
+@mixin fluid-ratio($large-size, $small-size)
+  $width-large: nth($large-size, 1)
+  $width-small: nth($small-size, 1)
+  $height-large: nth($large-size, 2)
+  $height-small: nth($small-size, 2)
+  $slope: ($height-large - $height-small) / ($width-large - $width-small)
+  $height: $height-small - $width-small * $slope
 
-// -------------------------------------
-//   Structures
-// -------------------------------------
+  padding-top: $slope * 100%
+  height: $height
 
-@import 'structures/header'
-@import 'structures/home'
-@import 'structures/jobs'
-@import 'structures/nav'
+  background-size: cover
+  -moz-background-size: cover  /* Firefox 3.6 */
+  background-position: center  /* Internet Explorer 7/8 */
 
-// -------------------------------------
-//   Vendor
-// -------------------------------------
+#garage
+  @include fluid-ratio(1110px 370px, 250px 150px)
+  background-image: url(/images/garage.png)
+  background-color: #fff
 
-// Third-party style imports, if needed
+main
+  background: #EDF3FA
+  padding: 30px 15px 30px 15px
+  text-align: center
+  color: #666
+  font-size: 22px
 
-// -------------------------------------
-//   Foundation - Tools
-// -------------------------------------
+  h2
+    font-size: 35px
+    color: #1F72BC
+    margin-top: 30px
+    font-weight: 700
 
-@import 'foundation/tools'
+    &:first-child
+      margin-top: 0
 
-// -------------------------------------
-//   Inbox
-// -------------------------------------
+  p
+    margin-top: 15px
 
-// ...
+  .jobs
+    div
+      display: inline-block
+      min-width: 280px
+      font-size: 20px
+      margin: 15px 0 30px 0
+
+      h3
+        font-size: 22px
+        font-weight: 400
+
+      span
+        display: block
+        margin: 8px 0 15px 0
+        font-weight: 300
+
+      a
+        display: inline-block
+        background: #428ED1
+        border-radius: 5px
+        padding: 6px 20px 10px 20px
+        font-weight: 700
+        color: #fff
+        text-decoration: none
+
+  p.contact
+    display: block
+    width: 80%
+    margin: 10px auto 5px auto
+    padding-top: 30px
+    border-top: 1px solid #ddd
+    font-size: 18px
+    font-weight: 300
+    color: #999

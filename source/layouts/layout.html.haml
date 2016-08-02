@@ -1,6 +1,8 @@
 !!!
 %html
   %head
+    %title= (current_page.data.title || 'Garage Born')
+
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
     %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
     %meta{ charset: 'utf-8' }
@@ -8,13 +10,11 @@
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     %title= current_page.data.title
 
-    %link{ href: '//fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet' }
     = stylesheet_link_tag :application
     = javascript_include_tag :application
 
-  %body{ class: page_classes }
-    = partial 'layouts/nav'
-    .container= yield
+  %body
+    #container= yield
 
     :javascript
       analytics.page();
