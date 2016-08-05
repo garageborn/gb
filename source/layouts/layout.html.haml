@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= (current_page.data.title || 'Garage Born')
+    %title= yield_content(:title)
 
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
     %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
@@ -14,7 +14,15 @@
     = javascript_include_tag :application
 
   %body
-    #container= yield
+    #container
+      #header
+        - if current_page.path == 'index.html'
+          %img{ src: '/images/logo.png', alt: 'Garage Born' }
+        - else
+          %a{ href: '/' }
+            %img{ src: '/images/logo.png', alt: 'Garage Born' }
+
+      =yield
 
     :javascript
       analytics.page();

@@ -9,13 +9,13 @@ require 'apply_app'
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 ignore '/jobs/show.html'
+
 data.jobs.each do |job|
   proxy "/jobs/#{ job.slug }/index.html", '/jobs/show.html', layout: 'layout', locals: {
     slug: job.slug,
     trello_list: job.trello_list,
-    title: job.title,
-    description: job.description,
-    body: job.body
+    job_title: job.title,
+    job_description: job.body
   }
 end
 

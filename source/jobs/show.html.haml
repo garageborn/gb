@@ -1,9 +1,30 @@
----
-title: #{ title }
----
+- content_for(:title, job_title + ' at Garage Born')
 
-%h1= title
+#job
+  %main
+    %h2= job_title
 
-= body
+    .job_description= job_description
 
-= partial 'jobs/apply', locals: { job: slug, trello_list: trello_list }
+    %form{ action: '/apply', method: :post, enctype: 'multipart/form-data' }
+      %input{ name: 'job', type: 'hidden', value: slug }
+      %input{ name: 'trello_list', type: 'hidden', value: trello_list }
+
+      .row
+        %label{ for: 'name' } Nome:
+        %input{ name: 'name', id: 'name', type: 'text', required: false }
+
+      .row
+        %label{ for: 'email' } Email:
+        %input{ name: 'email', id: 'email', type: 'email', required: false }
+
+      .row
+        %label{ for: 'salary' } Pretensão salarial:
+        %input{ name: 'salary', id: 'salary', type: 'number', required: false }
+
+      .row
+        %label{ for: 'file' } CV:
+        %input{ name: 'file', type: 'file', id: 'file' }
+
+      .row
+        %button.button{ type: 'submit', name: 'action' } Enviar
