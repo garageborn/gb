@@ -13,4 +13,4 @@ use Rack::TryStatic,
   urls: %w[/],
   try: ['.html', 'index.html', '/index.html']
 
-run Rack::NotFound.new('build/404/index.html')
+# run Rack::NotFound.new('build/404/index.html')
