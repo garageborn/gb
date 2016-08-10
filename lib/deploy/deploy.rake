@@ -2,12 +2,12 @@ require 'httparty'
 
 namespace :deploy do
   desc 'Load aws login'
-  task setup: :environment do
+  task :setup do
     system "eval `aws ecr get-login`"
   end
 
   desc 'Build docker image'
-  task build: :environment do
+  task :build do
     branch = ENV['branch'] || ENV['CIRCLE_BRANCH'] || `git rev-parse --abbrev-ref HEAD`.chomp
     repo = `git config --get remote.origin.url`.chomp
 
@@ -21,7 +21,7 @@ namespace :deploy do
   end
 
   desc 'Push docker image to amazon'
-  task push: :environment do
+  task :push do
     system <<-CMD
       docker tag gb:latest 845270614438.dkr.ecr.us-east-1.amazonaws.com/gb:latest
       docker push 845270614438.dkr.ecr.us-east-1.amazonaws.com/gb:latest
@@ -29,14 +29,14 @@ namespace :deploy do
   end
 
   desc 'Publish application'
-  task publish: :environment do
+  task :publish do
     circle_url = 'https://circleci.com/api/v1.1/project/github/' \
              'garageborn/server/tree/master' \
              '?circle-token=66745267a877024ad3be6dd5a321b3af459873f8'
     HTTParty.post(circle_url)
   end
 
-  task run: :environment do
+  task :run do
     Rake::Task['deploy:setup'].invoke
     Rake::Task['deploy:build'].invoke
     Rake::Task['deploy:push'].invoke
@@ -45,7 +45,7 @@ namespace :deploy do
 end
 
 desc 'Deploy'
-task deploy: :environment do
+task :deploy do
   Rake::Task['deploy:run'].invoke
 end
 
