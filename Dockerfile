@@ -2,7 +2,7 @@ FROM ruby:2.3.1-slim
 
 # install dependencies
 RUN apt-get update -qq && apt-get install --fix-missing -y build-essential locales nodejs
-RUN locale-gen en_US.UTF-8
+run echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && dpkg-reconfigure --frontend=noninteractive locales
 
 # build gb
 ENV GB /gb
