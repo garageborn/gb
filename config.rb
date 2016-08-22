@@ -1,5 +1,4 @@
-require File.expand_path('../config/sentry', __FILE__)
-require File.expand_path('../apply_app', __FILE__)
+require File.expand_path('../config/environment', __FILE__)
 
 ###
 # Page options, layouts, aliases and proxies

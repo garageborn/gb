@@ -1,9 +1,7 @@
 require 'rack'
 require 'rack/contrib/try_static'
 require 'rack/contrib/not_found'
-require 'raven'
-require File.expand_path('../config/sentry', __FILE__)
-require File.expand_path('../apply_app', __FILE__)
+require File.expand_path('../config/environment', __FILE__)
 
 use Raven::Rack
 map '/apply' do

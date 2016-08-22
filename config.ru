@@ -1,13 +1,4 @@
-require 'middleman-core/load_paths'
-::Middleman.setup_load_paths
-
-require 'middleman-core'
-require 'middleman-core/rack'
-require 'raven'
-require 'fileutils'
-
-FileUtils.mkdir('log') unless File.exist?('log')
-::Middleman::Logger.singleton("log/#{ ENV['RACK_ENV'] }.log")
+require File.expand_path('../config/environment', __FILE__)
 
 use Raven::Rack
 app = ::Middleman::Application.new

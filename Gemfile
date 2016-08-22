@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cloudinary', '1.2.2'
 gem 'haml', '4.0.7'
 gem 'httparty', '0.13.7'
 gem 'memoist', '0.14.0'

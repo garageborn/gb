@@ -1,7 +1,10 @@
 ---
-- slug:     'frontend-developer'
-  title:    'Frontend Developer'
+- slug: 'frontend-developer'
+  title: 'Frontend Developer'
+  description: 'React/React Native/Redux/Server-side Rendering/CSS'
+  salary: 'R$ 5.000,00 - PJ'
   location: 'Remote'
+  trello_list: '578d8570f7eece188b3ef546'
   body: >
     <p>
       Estamos em busca de nossos primeiros developers, então se você gosta de codar, mas sobretudo
@@ -11,19 +14,8 @@
       (Node.js) mas também vai acabar codando um pouco de Ruby, CSS, etc.
     </p>
     <p>
-      O modelo de contratação é o PJ, o trabalho é 100% remoto então você pode trabalhar de
-      qualquer lugar do seu planeta de origem, seja ele qual for, desde que tenha uma internet
+      A remuneração é de R$ 5.000,00/mês e o modelo de contratação é o PJ.
+      O  trabalho é 100% remoto então você pode trabalhar de qualquer lugar do seu planeta
+      de origem, seja ele qual for, desde que tenha uma internet
       decente, use linux ou mac e não tenha um email do hotmail!
     </p>
-
-- slug:     'backend-developer'
-  title:    'Backend Developer'
-  location: 'Remote'
-  body: >
-    <p>Trabalhe conosco!</p>
-
-- slug:     'ux-designer'
-  title:    'UX Designer'
-  location: 'Remote'
-  body: >
-    <p>Trabalhe conosco!</p>

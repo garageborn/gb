@@ -12,19 +12,19 @@
 
       .row
         %label{ for: 'name' } Nome:
-        %input{ name: 'name', id: 'name', type: 'text', required: false }
+        %input{ name: 'name', id: 'name', type: 'text', required: true }
 
       .row
         %label{ for: 'email' } Email:
-        %input{ name: 'email', id: 'email', type: 'email', required: false }
+        %input{ name: 'email', id: 'email', type: 'email', required: true }
 
       .row
-        %label{ for: 'salary' } Pretensão salarial:
-        %input{ name: 'salary', id: 'salary', type: 'number', required: false }
+        %label{ for: 'cover' } Cover letter:
+        %textarea{ name: 'cover', id: 'cover', rows: 4, required: true, placeholder: 'Por quê você quer trabalhar conosco?' }
 
       .row
         %label{ for: 'file' } CV:
-        %input{ name: 'file', type: 'file', id: 'file' }
+        %input{ name: 'file', type: 'file', id: 'file', required: true  }
 
       .row
         %button.button{ type: 'submit', name: 'action' } Enviar

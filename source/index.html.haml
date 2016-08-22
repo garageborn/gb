@@ -13,8 +13,10 @@
     .jobs
       - data.jobs.each do |job|
         %div
-          %h3= job.title
-          %span= job.location
+          %h3 #{ job.title } (#{ job.location })
+          %span= job.description
+          %span= job.salary
+
           = link_to 'Apply', job_path(job), class: 'button'
 
     %p.contact

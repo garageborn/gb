@@ -1,6 +1,3 @@
-require 'sinatra'
-require 'raven'
-
 if Sinatra::Base.production?
   Raven.configure do |config|
     config.dsn = ENV.fetch('GB_SENTRY_DSN')

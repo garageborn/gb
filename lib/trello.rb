@@ -4,25 +4,23 @@ require 'memoist'
 class Trello
   include HTTParty
   extend Memoist
-
   base_uri 'https://api.trello.com/1'.freeze
-  format :json
   default_params key: ENV['GB_TRELLO_KEY'], token: ENV['GB_TRELLO_TOKEN']
 
-  attr_accessor :email, :file, :job, :name, :salary, :trello_list
+  attr_accessor :email, :file, :job, :name, :cover, :trello_list
 
   def initialize(params)
     @email = params[:email]
     @file = params[:file]
     @job = params[:job]
     @name = params[:name]
-    @salary = params[:salary]
+    @cover = params[:cover]
     @trello_list = params[:trello_list]
   end
 
   def save
     return false unless card
-    upload_file if file
+    add_attachment
     true
   end
 
@@ -33,7 +31,7 @@ class Trello
       **job:** #{ job }
       **name:** #{ name }
       **email:** #{ email }
-      **salary:** #{ salary }
+      **cover:** #{ cover }
     EOF
   end
 
@@ -43,21 +41,34 @@ class Trello
       desc: description,
       idList: trello_list
     })
-    return unless response.success?
-    response
+    return response if response.success?
+    Raven.capture_message('UnprocessableEntity', extra: {
+      card: description,
+      reponse: response.parsed_response
+    })
+    nil
   end
 
   def card_id
     card.parsed_response['id']
   end
 
-  def upload_file
+  def add_attachment
+    return if file_url.blank?
+
     self.class.post("/cards/#{ card_id }/attachments", body: {
-      file: file[:tempfile],
+      url: file_url,
       mimeType: file[:type],
       name: file[:filename]
     })
   end
 
-  memoize :description, :card, :card_id
+  def file_url
+    return if file[:tempfile].blank?
+    upload = Cloudinary::Uploader.upload(file[:tempfile])
+    return if upload.blank?
+    upload['secure_url']
+  end
+
+  memoize :description, :card, :card_id, :file_url
 end
