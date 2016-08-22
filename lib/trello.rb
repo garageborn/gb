@@ -7,7 +7,7 @@ class Trello
 
   base_uri 'https://api.trello.com/1'.freeze
   format :json
-  default_params key: ENV['TRELLO_KEY'], token: ENV['TRELLO_TOKEN']
+  default_params key: ENV['GB_TRELLO_KEY'], token: ENV['GB_TRELLO_TOKEN']
 
   attr_accessor :email, :file, :job, :name, :salary, :trello_list
 

@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
 
 gem 'haml', '4.0.7'
 gem 'httparty', '0.13.7'
@@ -12,4 +11,5 @@ gem 'middleman-sprockets', '4.0.0'
 gem 'puma', '3.5.0'
 gem 'rack-contrib', '1.4.0'
 gem 'rake', '11.2.2'
+gem 'sentry-raven', '0.15.2'
 gem 'sinatra', '1.4.7'

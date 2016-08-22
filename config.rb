@@ -1,4 +1,5 @@
-require 'apply_app'
+require File.expand_path('../config/sentry', __FILE__)
+require File.expand_path('../apply_app', __FILE__)
 
 ###
 # Page options, layouts, aliases and proxies
@@ -23,6 +24,7 @@ end
 
 # Reload the browser automatically whenever files change
 configure :development do
+  activate :dotenv
   activate :livereload
 end
 
@@ -48,6 +50,7 @@ activate :sprockets
 activate :directory_indexes
 set :haml, { ugly: true, format: :html5 }
 
+use Raven::Rack
 map '/apply' do
   run ApplyApp
 end
