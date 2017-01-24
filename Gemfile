@@ -14,3 +14,11 @@ gem 'rack-contrib', '1.4.0'
 gem 'rake', '11.2.2'
 gem 'sentry-raven', '0.15.2'
 gem 'sinatra', '1.4.7'
+
+group :development do
+  gem 'capistrano-bundler', '1.2.0', require: false
+  gem 'capistrano-rbenv', '2.1.0', require: false
+  gem 'capistrano-yarn', '2.0.2', require: false
+  gem 'capistrano3-puma', '1.2.1', require: false
+  gem 'capistrano', '3.7.1'
+end
