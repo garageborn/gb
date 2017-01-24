@@ -19,4 +19,7 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails middleman}
 set :rbenv_roles, :all
 
 # puma
-set :puma_conf, "#{ fetch(:release_path) }/config/puma.rb"
+set :puma_conf, -> {
+  p '-----------------------', fetch(:release_path), release_path
+  "#{ fetch(:release_path) }/config/puma.rb"
+}
