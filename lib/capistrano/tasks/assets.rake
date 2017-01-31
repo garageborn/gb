@@ -3,7 +3,7 @@ namespace :assets do
   task precompile: :clean do
     on roles(:app) do
       within fetch(:release_path) do
-        execute('bin/middleman build')
+        execute(:bundle, :exec, :middleman, :build)
       end
     end
   end
