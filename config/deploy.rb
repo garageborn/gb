@@ -20,4 +20,4 @@ set :rbenv_roles, :all
 
 # puma
 set :puma_threads, [0, 2]
-set :puma_workers, 2
+set :puma_workers, 1
