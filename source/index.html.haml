@@ -8,16 +8,17 @@
     %h2 Hello!
     %p We're Garage Born and we make stuff. Oh, and we're hiring!
 
-    %h2 Jobs
+    - if data.jobs.present?
+      %h2 Jobs
 
-    .jobs
-      - data.jobs.each do |job|
-        %div
-          %h3 #{ job.title } (#{ job.location })
-          %span= job.description
-          %span= job.salary
+      .jobs
+        - data.jobs.each do |job|
+          %div
+            %h3 #{ job.title } (#{ job.location })
+            %span= job.description
+            %span= job.salary
 
-          = link_to 'Apply', job_path(job), class: 'button'
+            = link_to 'Apply', job_path(job), class: 'button'
 
     %p.contact
       hello@garageborn.com
