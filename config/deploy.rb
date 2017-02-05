@@ -19,5 +19,5 @@ set :rbenv_map_bins, %w{rake gem bundle ruby middleman}
 set :rbenv_roles, :all
 
 # puma
-set :puma_threads, [0, 2]
+set :puma_threads, [0, 1]
 set :puma_workers, 1
