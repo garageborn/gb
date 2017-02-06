@@ -20,5 +20,5 @@ group :development do
   gem 'capistrano-rbenv', '2.1.0', require: false
   gem 'capistrano-yarn', '2.0.2', require: false
   gem 'capistrano3-puma', '1.2.1', require: false
-  gem 'capistrano', '3.7.1'
+  gem 'capistrano', '3.7.2'
 end

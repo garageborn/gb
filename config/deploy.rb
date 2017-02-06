@@ -1,4 +1,4 @@
-lock '3.7.1'
+lock '3.7.2'
 
 set :application, 'gb'
 set :repo_url, 'git@github.com:garageborn/gb.git'
@@ -19,7 +19,5 @@ set :rbenv_map_bins, %w{rake gem bundle ruby middleman}
 set :rbenv_roles, :all
 
 # puma
-set :puma_conf, -> {
-  p '-----------------------', fetch(:release_path), release_path
-  "#{ fetch(:release_path) }/config/puma.rb"
-}
+set :puma_threads, [0, 1]
+set :puma_workers, 1
